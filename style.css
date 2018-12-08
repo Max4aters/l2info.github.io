@@ -1,0 +1,6 @@
+body > .container {
+  max-width: 780px;
+}
+td, th {
+  padding: 1.2rem 2rem;
+}
