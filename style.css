@@ -26,6 +26,17 @@ td, th {
 .card header .video {
   font-size: 12px;
   float: right;
+  padding: 1rem 1.5rem;
+}
+.card header .video .fa {
+  font-size: 16px;
+  line-height: 12px;
+}
+
+.bg-highlight {
+  background-color: #C8F463;
+  padding-left: .4rem;
+  padding-right: .4rem;
 }
 
 .social {
