@@ -13,18 +13,34 @@ td, th {
   padding: 1.2rem 2rem;
 }
 
-.panel {
+.card {
   margin: 5rem auto;
-  padding: 1rem;
   background: #fff;
-  border-radius: 4px;
-
--webkit-box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.08);
--moz-box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.08);
-box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.08);
 }
 
-.panel header h2 {
+.card header h2 {
   font-weight: lighter;
   margin-top: 0;
+}
+
+.card header .video {
+  font-size: 12px;
+  float: right;
+}
+
+.social {
+  display: inline-block;
+  padding: 8px;
+}
+.color-twitch {
+  color: #6441A5;
+}
+.color-youtube {
+  color: #FF0000;
+}
+.color-twitter {
+  color: #1DA1F2;
+}
+.color-facebook {
+  color: #4064AC;
 }
