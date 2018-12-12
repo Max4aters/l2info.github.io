@@ -4,3 +4,7 @@ body > .container {
 td, th {
   padding: 1.2rem 2rem;
 }
+body > footer {
+  background-color: #fafafa;
+  padding: 4rem;
+}
