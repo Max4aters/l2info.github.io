@@ -35,6 +35,10 @@ td, th {
 
 .bg-highlight {
   background-color: #C8F463;
+}
+.bg-highlight,
+.bg-success,
+.bg-error {
   padding-left: .4rem;
   padding-right: .4rem;
 }
@@ -54,4 +58,12 @@ td, th {
 }
 .color-facebook {
   color: #4064AC;
+}
+
+.button.small {
+  padding: 0.4rem 1rem;
+}
+.button.white,
+.button.outline.white {
+  background: #fff;
 }
