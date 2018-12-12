@@ -1,14 +1,30 @@
+body {
+  background: #fafafa;
+}
 body > .container {
   max-width: 780px;
 }
-td, th {
-  padding: 1.2rem 2rem;
-}
 body > footer {
-  background-color: #fafafa;
+  background-color: #fff;
   padding: 4rem;
 }
 
-section {
+td, th {
+  padding: 1.2rem 2rem;
+}
+
+.panel {
   margin: 5rem auto;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 4px;
+
+-webkit-box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.08);
+-moz-box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.08);
+box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.08);
+}
+
+.panel header h2 {
+  font-weight: lighter;
+  margin-top: 0;
 }
