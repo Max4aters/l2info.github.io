@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/chota">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css?v2">
     <link rel="icon" type="image/png" href="./favicon.png" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -195,16 +195,16 @@
                 <td>Procurando por</td>
               </tr>
               <tr>
-                <td>AFK</td>
-                <td>Away from Keyboard</td>
-                <td>Volto logo</td>
-              </tr>
-              <tr>
                 <td>PT</td>
                 <td>Party</td>
                 <td>Jogar em grupo</td>
               </tr>
               <tr>
+                <td>CP</td>
+                <td>Constant Party</td>
+                <td>Jogar em grupo todos os dias no mesmo horário</td>
+              </tr>
+              <tr class="toggle is-hidden">
                 <td>TS</td>
                 <td>
                   Team Speak
@@ -212,43 +212,139 @@
                 </td>
                 <td>É um programa para conversar por voz</td>
               </tr>
-              <tr>
+              <tr class="toggle is-hidden">
+                <td>SB</td>
+                <td>Spellbook</td>
+                <td>Livro para aprender skill</td>
+              </tr>
+              <tr class="toggle is-hidden">
+                <td>AFK</td>
+                <td>Away from Keyboard</td>
+                <td>Volto logo</td>
+              </tr>
+              <tr class="toggle is-hidden">
                 <td>SS</td>
                 <td>Soulshot / Spiritshot</td>
                 <td>SSD, SSC... Soulshot D, Spiritshot D...</td>
               </tr>
-              <tr>
+              <tr class="toggle is-hidden">
                 <td>BSS</td>
                 <td>Blessed Spiritshot</td>
                 <td>BSSD, BSSC... Blessed Spiritshot D...</td>
               </tr>
-              <tr>
+              <tr class="toggle is-hidden">
                 <td>PM</td>
                 <td>Private Message</td>
                 <td>Enviar mensagem primada</td>
               </tr>
-              <tr>
+              <tr class="toggle is-hidden">
                 <td>EWD</td>
                 <td>Enchant Weapon D</td>
                 <td>EWC só muda o final C, EWB...</td>
               </tr>
-              <tr>
+              <tr class="toggle is-hidden">
                 <td>EAD</td>
                 <td>Enchant Armor D</td>
                 <td>EAC só muda o final C, EWB...</td>
               </tr>
-              <tr>
+              <tr class="toggle is-hidden">
                 <td>REC</td>
                 <td>Recipe / Recommendation</td>
                 <td>Depende do contexto</td>
               </tr>
-              <tr>
+              <tr class="toggle is-hidden">
                 <td>NG</td>
                 <td>No Grade</td>
                 <td>&nbsp;</td>
               </tr>
+              <tr class="toggle is-hidden">
+                <td>PPL</td>
+                <td>People</td>
+                <td>Pessoas (jogadores)</td>
+              </tr>
+              <tr class="toggle is-hidden">
+                <td>KK</td>
+                <td>Milhão</td>
+                <td>1kk (1 milhão de adenas)</td>
+              </tr>
+              <tr class="toggle is-hidden">
+                <td>GG</td>
+                <td>Good Game</td>
+                <td>Bom jogo</td>
+              </tr>
+              <tr class="toggle is-hidden">
+                <td>Zerg</td>
+                <td>&nbsp;</td>
+                <td>Juntar muita gente para conseguir ganhar</td>
+              </tr>
+              <tr class="toggle is-hidden">
+                <td>RR</td>
+                <td>Restart</td>
+                <td>Reiniciar o jogo</td>
+              </tr>
+
+              <!-- class -->
+              <tr class="toggle is-hidden">
+                <td>BD</td>
+                <td>Bladedancer</td>
+                <td>Elfo negro fighter com classe Bladedancer (dance)</td>
+              </tr>
+              <tr class="toggle is-hidden">
+                <td>BS</td>
+                <td>Bishop</td>
+                <td>Humano mago com classe Bishop</td>
+              </tr>
+              <tr class="toggle is-hidden">
+                <td>EE</td>
+                <td>Elven Elder</td>
+                <td>Elfo mago com classe Elven Elder</td>
+              </tr>
+              <tr class="toggle is-hidden">
+                <td>PP</td>
+                <td>Prophet</td>
+                <td>Humano mago com classe Prophet</td>
+              </tr>
+              <tr class="toggle is-hidden">
+                <td>PR</td>
+                <td>Phantom Ranger</td>
+                <td>Elfo negro fighter com classe Phantom Ranger (arqueiro)</td>
+              </tr>
+              <tr class="toggle is-hidden">
+                <td>SE</td>
+                <td>Shillien Elder</td>
+                <td>Elfo negro mago com classe Shillien Elder</td>
+              </tr>
+              <tr class="toggle is-hidden">
+                <td>SR</td>
+                <td>Silver Ranger</td>
+                <td>Elfo fighter com classe Silver Ranger (arqueiro)</td>
+              </tr>
+              <tr class="toggle is-hidden">
+                <td>SwS</td>
+                <td>Sword Singer</td>
+                <td>Elfo fighter com classe Sword Singer (song)</td>
+              </tr>
+              <tr class="toggle is-hidden">
+                <td>TK</td>
+                <td>Temple Knight</td>
+                <td>Elfo fighter com classe Temple Knight (tanker)</td>
+              </tr>
+              <tr class="toggle is-hidden">
+                <td>WC</td>
+                <td>Warcryer</td>
+                <td>Orc mago com classe Warcryer</td>
+              </tr>
+              <tr class="toggle is-hidden">
+                <td>WL</td>
+                <td>Warlord</td>
+                <td>Humano fighter com classe Warlord</td>
+              </tr>
             </tbody>
           </table>
+          <div class="is-text-center mt-1">
+            <button type="button" id="button-more" class="button outline primary" onclick="showMore()">Mostrar Mais Siglas</button>
+            <button type="button" id="button-less" class="button outline dark" onclick="showLess()" style="display: none">Mostrar Menos Siglas</button>
+          </div>
         </article>
       </section>
     </div>
@@ -273,5 +369,6 @@
       </p>
       <h5>Made by <a href="https://twitter.com/vaneves">Van Neves</a></h5>
     </footer>
+    <script type="text/javascript" src="./script.js"></script>
   </body>
 </html>
