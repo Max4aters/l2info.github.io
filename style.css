@@ -2,7 +2,7 @@ body {
   background: #fafafa;
 }
 body > .container {
-  max-width: 780px;
+  max-width: 820px;
 }
 body > footer {
   background-color: #fff;
@@ -60,10 +60,57 @@ td, th {
   color: #4064AC;
 }
 
+.button {
+  cursor: pointer;
+}
 .button.small {
   padding: 0.4rem 1rem;
 }
 .button.white,
 .button.outline.white {
   background: #fff;
+}
+
+fieldset {
+  background: #fff;
+}
+select {
+  background: #fff no-repeat 100%;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 13px;
+  }
+  td, th {
+    padding: 6px;
+  }
+  th.min-1 {
+    min-width: 100px;
+  }
+  th.min-2 {
+    min-width: 200px;
+  }
+  .container {
+    padding: 5px;
+  }
+  .card {
+    padding: 5px;
+    margin: 10px auto;
+  }
+  .text-small {
+    font-size: 12px;
+  }
+}
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+.table-responsive > table {
+  width: 100%;
+  max-width: 100%;
 }
