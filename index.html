@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/chota">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css?v2">
+    <link rel="stylesheet" href="./style.css?v4">
     <link rel="icon" type="image/png" href="./favicon.png" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -27,6 +27,19 @@
         <p>Informações de horários de eventos, desmistificação e dicas sobre o Lineage II Classic NA.</p>
       </header>
 
+      <!-- gmt -->
+      <fieldset id="forms__select">
+        <legend>Selecione seu GMT</legend>
+        <p>
+          <select id="select" onchange="updateGMT(this.value)">
+            <option value="-02:00" selected>-2 Brasília (SP, RJ, PR, RS, ES, GO, SC, MG)</option>
+            <option value="-03:00">-3 TO, BA, MT, MS, PA, MA, PI, CE, SE, PB, PE, AL, RN</option>
+            <option value="-04:00">-4 AM, RR, RO</option>
+            <option value="-05:00">-5 Acre</option>
+          </select>
+        </p>
+      </fieldset>
+
       <!-- events -->
       <section id="holiday" class="card">
         <article class="text__hr">
@@ -37,43 +50,45 @@
             <h2>Evento Holiday Bonus</h2>
           </header>
           <p><span class="bg-highlight">O evento é 24h por dia</span>, mas nos horários abaixo dobra o rate de drop de itens (do evento).</p>
-          <table class="striped">
-            <thead>
-              <tr>
-                <th>Servidor</th>
-                <th>GMT</th>
-                <th>Começa*</th>
-                <th>Termina*</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Talking Island</td>
-                <td>-5</td>
-                <td>21h00</td>
-                <td>03h00</td>
-              </tr>
-              <tr>
-                <td>Giran</td>
-                <td>+1</td>
-                <td>15h00</td>
-                <td>21h00</td>
-              </tr>
-              <tr>
-                <td>Aden</td>
-                <td>-8</td>
-                <td>23h59</td>
-                <td>06h00</td>
-              </tr>
-              <tr>
-                <td>Gludio</td>
-                <td>-4</td>
-                <td>20h00</td>
-                <td>02h00</td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="is-text-right text-grey">* Brasília tem o GMT -2 durante o horário de verão.</p>
+          <div class="table-responsive">
+            <table class="striped">
+              <thead>
+                <tr>
+                  <th class="min-1">Servidor</th>
+                  <th>GMT</th>
+                  <th>Começa*</th>
+                  <th>Termina*</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Talking Island</td>
+                  <td>-5</td>
+                  <td class="gmt" data-gmt="-05:00" data-hour="18:00">21h00</td>
+                  <td class="gmt" data-gmt="-05:00" data-hour="00:00">03h00</td>
+                </tr>
+                <tr>
+                  <td>Giran</td>
+                  <td>+1</td>
+                  <td class="gmt" data-gmt="+01:00" data-hour="18:00">15h00</td>
+                  <td class="gmt" data-gmt="+01:00" data-hour="00:00">21h00</td>
+                </tr>
+                <tr>
+                  <td>Aden</td>
+                  <td>-8</td>
+                  <td class="gmt" data-gmt="-08:00" data-hour="18:00">23h59</td>
+                  <td class="gmt" data-gmt="-08:00" data-hour="00:00">06h00</td>
+                </tr>
+                <tr>
+                  <td>Gludio</td>
+                  <td>-4</td>
+                  <td class="gmt" data-gmt="-04:00" data-hour="18:00">20h00</td>
+                  <td class="gmt" data-gmt="-04:00" data-hour="00:00">02h00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="is-text-right text-grey text-small gmt-description">* Brasília tem o GMT -2 durante o horário de verão.</p>
         </article>
       </section>
       
@@ -85,71 +100,41 @@
             </a>
             <h2>Evento de XP/SP/Adena +50%</h2>
           </header>
-          <p>Horário que começa o evento (<span class="bg-highlight">tem dias específicos</span>).</p>
-          <table class="striped">
-            <thead>
-              <tr>
-                <th>Servidor</th>
-                <th>GMT</th>
-                <th>Horário de Brasília*</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Talking Island</td>
-                <td>-5</td>
-                <td>03h00</td>
-              </tr>
-              <tr>
-                <td>Giran</td>
-                <td>+1</td>
-                <td>21h00 (começa antes)</td>
-              </tr>
-              <tr>
-                <td>Aden</td>
-                <td>-8</td>
-                <td>06h00</td>
-              </tr>
-              <tr>
-                <td>Gludio</td>
-                <td>-4</td>
-                <td>02h00</td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="is-text-right text-grey">* Brasília tem o GMT -2 durante o horário de verão.</p>
-        </article>
-      </section>
-
-      <!-- true or false -->
-      <section id="questions" class="card">
-        <article class="text__hr">
-          <header>
-            <h2>Desmistificação</h2>
-          </header>
-          <p>Existem algumas coisas no L2 que alguns dizem ser verdade, outros dizem ser mito. Então resolvi testar e ver se funciona mesmo.</p>
-          <table class="striped">
-            <thead>
-              <tr>
-                <th>Dúvidas</th>
-                <th style="width: 110px">&nbsp;</th>
-                <th style="width: 85px">Vídeo</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Matar com OverHit dá mais XP</td>
-                <td>
-                  <span class="bg-highlight">Verdade</span>
-                </td>
-                <td>
-                  <a class="button small white outline" target="_blank" href="https://www.youtube.com/watch?v=-43Fuab7hxM">
-                    <i class="fa fa-youtube-play color-youtube"></i>
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <p>Horário que começa o evento (<span class="bg-highlight">começa na noite de sexta para sábado</span>).</p>
+          <div class="table-responsive">
+            <table class="striped">
+              <thead>
+                <tr>
+                  <th class="min-1">Servidor</th>
+                  <th>GMT</th>
+                  <th>Começa*</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Talking Island</td>
+                  <td>-5</td>
+                  <td class="gmt" data-gmt="-05:00" data-hour="00:00">03h00</td>
+                </tr>
+                <tr>
+                  <td>Giran</td>
+                  <td>+1</td>
+                  <td class="gmt" data-gmt="+01:00" data-hour="00:00">21h00 (começa antes)</td>
+                </tr>
+                <tr>
+                  <td>Aden</td>
+                  <td>-8</td>
+                  <td class="gmt" data-gmt="-08:00" data-hour="00:00">06h00</td>
+                </tr>
+                <tr>
+                  <td>Gludio</td>
+                  <td>-4</td>
+                  <td class="gmt" data-gmt="-04:00" data-hour="00:00">02h00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="is-text-right text-grey text-small gmt-description">* Brasília tem o GMT -2 durante o horário de verão.</p>
         </article>
       </section>
 
@@ -160,187 +145,194 @@
             <h2>Dicionário de Siglas</h2>
           </header>
           <p>O que significa algumas siglas usadas dentro do jogo.</p>
-          <table class="striped">
-            <thead>
-              <tr>
-                <th>Sigla</th>
-                <th>Significado</th>
-                <th>Descrição</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>WTB</td>
-                <td>Want to Buy</td>
-                <td>Quero comprar</td>
-              </tr>
-              <tr>
-                <td>WTS</td>
-                <td>Want to Sell</td>
-                <td>Quero vender</td>
-              </tr>
-              <tr>
-                <td>WTT</td>
-                <td>Want to Trade</td>
-                <td>Quero trocar</td>
-              </tr>
-              <tr>
-                <td>AOE</td>
-                <td>Area of Effect</td>
-                <td>Skill que bate em área</td>
-              </tr>
-              <tr>
-                <td>LF</td>
-                <td>Looking For</td>
-                <td>Procurando por</td>
-              </tr>
-              <tr>
-                <td>PT</td>
-                <td>Party</td>
-                <td>Jogar em grupo</td>
-              </tr>
-              <tr>
-                <td>CP</td>
-                <td>Constant Party</td>
-                <td>Jogar em grupo todos os dias no mesmo horário</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>TS</td>
-                <td>
-                  Team Speak
-                  <a href="https://www.teamspeak.com/en/" target="_blank"><i class="fa fa-external-link"></i></a>
-                </td>
-                <td>É um programa para conversar por voz</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>SB</td>
-                <td>Spellbook</td>
-                <td>Livro para aprender skill</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>AFK</td>
-                <td>Away from Keyboard</td>
-                <td>Volto logo</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>SS</td>
-                <td>Soulshot / Spiritshot</td>
-                <td>SSD, SSC... Soulshot D, Spiritshot D...</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>BSS</td>
-                <td>Blessed Spiritshot</td>
-                <td>BSSD, BSSC... Blessed Spiritshot D...</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>PM</td>
-                <td>Private Message</td>
-                <td>Enviar mensagem primada</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>EWD</td>
-                <td>Enchant Weapon D</td>
-                <td>EWC só muda o final C, EWB...</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>EAD</td>
-                <td>Enchant Armor D</td>
-                <td>EAC só muda o final C, EWB...</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>REC</td>
-                <td>Recipe / Recommendation</td>
-                <td>Depende do contexto</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>NG</td>
-                <td>No Grade</td>
-                <td>&nbsp;</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>PPL</td>
-                <td>People</td>
-                <td>Pessoas (jogadores)</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>KK</td>
-                <td>Milhão</td>
-                <td>1kk (1 milhão de adenas)</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>GG</td>
-                <td>Good Game</td>
-                <td>Bom jogo</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>Zerg</td>
-                <td>&nbsp;</td>
-                <td>Juntar muita gente para conseguir ganhar</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>RR</td>
-                <td>Restart</td>
-                <td>Reiniciar o jogo</td>
-              </tr>
+          <div class="table-responsive">
+            <table class="striped">
+              <thead>
+                <tr>
+                  <th>Sigla</th>
+                  <th class="min-1">Significado</th>
+                  <th class="min-2">Descrição</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>WTB</td>
+                  <td>Want to Buy</td>
+                  <td>Quero comprar</td>
+                </tr>
+                <tr>
+                  <td>WTS</td>
+                  <td>Want to Sell</td>
+                  <td>Quero vender</td>
+                </tr>
+                <tr>
+                  <td>WTT</td>
+                  <td>Want to Trade</td>
+                  <td>Quero trocar</td>
+                </tr>
+                <tr>
+                  <td>AOE</td>
+                  <td>Area of Effect</td>
+                  <td>Skill que bate em área</td>
+                </tr>
+                <tr>
+                  <td>LF</td>
+                  <td>Looking For</td>
+                  <td>Procurando por</td>
+                </tr>
+                <tr>
+                  <td>PT</td>
+                  <td>Party</td>
+                  <td>Jogar em grupo</td>
+                </tr>
+                <tr>
+                  <td>CP</td>
+                  <td>Constant Party</td>
+                  <td>Jogar em grupo todos os dias no mesmo horário</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>TS</td>
+                  <td>
+                    Team Speak
+                    <a href="https://www.teamspeak.com/en/" target="_blank"><i class="fa fa-external-link"></i></a>
+                  </td>
+                  <td>É um programa para conversar por voz</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>SB</td>
+                  <td>Spellbook</td>
+                  <td>Livro para aprender skill</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>AFK</td>
+                  <td>Away from Keyboard</td>
+                  <td>Volto logo</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>SS</td>
+                  <td>Soulshot / Spiritshot</td>
+                  <td>SSD, SSC... Soulshot D, Spiritshot D...</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>BSS</td>
+                  <td>Blessed Spiritshot</td>
+                  <td>BSSD, BSSC... Blessed Spiritshot D...</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>PM</td>
+                  <td>Private Message</td>
+                  <td>Enviar mensagem primada</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>EWD</td>
+                  <td>Enchant Weapon D</td>
+                  <td>EWC só muda o final C, EWB...</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>EAD</td>
+                  <td>Enchant Armor D</td>
+                  <td>EAC só muda o final C, EWB...</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>REC</td>
+                  <td>Recipe / Recommendation</td>
+                  <td>Depende do contexto</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>NG</td>
+                  <td>No Grade</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>PPL</td>
+                  <td>People</td>
+                  <td>Pessoas (jogadores)</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>KK</td>
+                  <td>Milhão</td>
+                  <td>1kk (1 milhão de adenas)</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>GG</td>
+                  <td>Good Game</td>
+                  <td>Bom jogo</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>Zerg</td>
+                  <td>&nbsp;</td>
+                  <td>Juntar muita gente para conseguir ganhar</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>RR</td>
+                  <td>Restart</td>
+                  <td>Reiniciar o jogo</td>
+                </tr>
 
-              <!-- class -->
-              <tr class="toggle is-hidden">
-                <td>BD</td>
-                <td>Bladedancer</td>
-                <td>Elfo negro fighter com classe Bladedancer (dance)</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>BS</td>
-                <td>Bishop</td>
-                <td>Humano mago com classe Bishop</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>EE</td>
-                <td>Elven Elder</td>
-                <td>Elfo mago com classe Elven Elder</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>PP</td>
-                <td>Prophet</td>
-                <td>Humano mago com classe Prophet</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>PR</td>
-                <td>Phantom Ranger</td>
-                <td>Elfo negro fighter com classe Phantom Ranger (arqueiro)</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>SE</td>
-                <td>Shillien Elder</td>
-                <td>Elfo negro mago com classe Shillien Elder</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>SR</td>
-                <td>Silver Ranger</td>
-                <td>Elfo fighter com classe Silver Ranger (arqueiro)</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>SwS</td>
-                <td>Sword Singer</td>
-                <td>Elfo fighter com classe Sword Singer (song)</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>TK</td>
-                <td>Temple Knight</td>
-                <td>Elfo fighter com classe Temple Knight (tanker)</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>WC</td>
-                <td>Warcryer</td>
-                <td>Orc mago com classe Warcryer</td>
-              </tr>
-              <tr class="toggle is-hidden">
-                <td>WL</td>
-                <td>Warlord</td>
-                <td>Humano fighter com classe Warlord</td>
-              </tr>
-            </tbody>
-          </table>
+                <!-- class -->
+                <tr class="toggle is-hidden">
+                  <td>BD</td>
+                  <td>Bladedancer</td>
+                  <td>Elfo negro fighter com classe Bladedancer (dance)</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>BS</td>
+                  <td>Bishop</td>
+                  <td>Humano mago com classe Bishop</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>DA</td>
+                  <td>Dark Avenger</td>
+                  <td>Humano fighter com classe Dark Avenger (arqueiro)</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>EE</td>
+                  <td>Elven Elder</td>
+                  <td>Elfo mago com classe Elven Elder</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>PP</td>
+                  <td>Prophet</td>
+                  <td>Humano mago com classe Prophet</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>PR</td>
+                  <td>Phantom Ranger</td>
+                  <td>Elfo negro fighter com classe Phantom Ranger (arqueiro)</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>SE</td>
+                  <td>Shillien Elder</td>
+                  <td>Elfo negro mago com classe Shillien Elder</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>SR</td>
+                  <td>Silver Ranger</td>
+                  <td>Elfo fighter com classe Silver Ranger (arqueiro)</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>SwS</td>
+                  <td>Sword Singer</td>
+                  <td>Elfo fighter com classe Sword Singer (song)</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>TK</td>
+                  <td>Temple Knight</td>
+                  <td>Elfo fighter com classe Temple Knight (tanker)</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>WC</td>
+                  <td>Warcryer</td>
+                  <td>Orc mago com classe Warcryer</td>
+                </tr>
+                <tr class="toggle is-hidden">
+                  <td>WL</td>
+                  <td>Warlord</td>
+                  <td>Humano fighter com classe Warlord</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           <div class="is-text-center mt-1">
             <button type="button" id="button-more" class="button outline primary" onclick="showMore()">Mostrar Mais Siglas</button>
             <button type="button" id="button-less" class="button outline dark" onclick="showLess()" style="display: none">Mostrar Menos Siglas</button>
@@ -369,6 +361,7 @@
       </p>
       <h5>Made by <a href="https://twitter.com/vaneves">Van Neves</a></h5>
     </footer>
-    <script type="text/javascript" src="./script.js"></script>
+    <script type="text/javascript" src="https://momentjs.com/downloads/moment.js"></script>
+    <script type="text/javascript" src="./script.js?v2"></script>
   </body>
 </html>
