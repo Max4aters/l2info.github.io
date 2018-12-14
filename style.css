@@ -114,3 +114,7 @@ select {
   width: 100%;
   max-width: 100%;
 }
+
+.mt-1 {
+  margin-top: 10px;
+}
