@@ -23,6 +23,11 @@ td, th {
   margin-top: 0;
 }
 
+.card header h2 .anchor {
+  font-size: 18px;
+  line-height: 20px;
+}
+
 .card header .video {
   font-size: 12px;
   float: right;
