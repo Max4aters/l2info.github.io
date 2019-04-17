@@ -19,7 +19,7 @@
     document.getElementById('button-less').style.display = 'none';
   };
 
-  var GMT_BRASILIA = '-02:00';
+  var GMT_BRASILIA = '-03:00';
   var gmt = GMT_BRASILIA;
 
   window.refreshGMT = function () {
@@ -33,7 +33,7 @@
 
     var text = '* De acordo com o GMT '+ gmt.replace(':', '').replace(/0/g, '') +'.';
     if (gmt == GMT_BRASILIA) {
-      text = '* Brasília tem o GMT -2 durante o horário de verão.'; 
+      // text = '* Brasília tem o GMT -2 durante o horário de verão.'; 
     }
 
     elements = document.getElementsByClassName('gmt-description');
